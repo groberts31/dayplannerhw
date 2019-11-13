@@ -3,3 +3,15 @@
 #jumbo {
     background-color: gray;
 }
+.row {
+    border: solid black;
+    background-color: white;
+}
+.col {
+    border: solid black;
+    background-color: white;
+}
+.col-8 {
+    border: solid black;
+    background-color: white;
+}
