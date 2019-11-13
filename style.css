@@ -4,14 +4,24 @@
     background-color: gray;
 }
 .row {
-    border: solid black;
     background-color: white;
 }
 .col {
     border: solid black;
     background-color: white;
+    border-radius: 20px;
 }
 .col-8 {
     border: solid black;
     background-color: white;
+}
+.saveBtns {
+    background-color: teal;
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+}
+.form-control {
+    
 }
