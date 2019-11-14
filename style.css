@@ -4,7 +4,7 @@
     background-color: gray;
 }
 .row {
-    background-color: white;
+    background-color: gray;
 }
 .col {
     border: solid black;
@@ -13,7 +13,7 @@
 }
 .col-8 {
     border: solid black;
-    background-color: white;
+    background-color: gray;
 }
 .saveBtns {
     background-color: teal;
@@ -22,6 +22,6 @@
     border-radius: 20px;
     height: 100%;
 }
-.form-control {
-    
+.colLeft {
+    background-color: white;
 }
