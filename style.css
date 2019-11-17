@@ -1,5 +1,9 @@
 /* Stylesheet for Day Planner */
 
+#jumbo1 {
+    background-color: white;
+    text-align: center;
+}
 #jumbo {
     background-color: gray;
 }
