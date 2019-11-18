@@ -5,10 +5,10 @@
     text-align: center;
 }
 #jumbo {
-    background-color: gray;
+    background-color: rgb(224, 224, 224);
 }
 .row {
-    background-color: gray;
+    background-color: rgb(224, 224, 224);
 }
 .col {
     border: solid black;
@@ -17,7 +17,7 @@
 }
 .col-8 {
     border: solid black;
-    background-color: gray;
+    background-color: rgb(224, 224, 224);
 }
 .saveBtns {
     background-color: teal;

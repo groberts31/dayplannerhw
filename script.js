@@ -1,5 +1,4 @@
 
-var inputVal = $("#save-info").val();
 var saveBtnsEl = document.getElementsByClassName("saveBtns");
 var row1El = $("#row1");
 var row2El = $("#row2");
@@ -13,64 +12,51 @@ var row9El = $("#row9");
 
 
 $(document).ready(function () {
-    $(saveBtnsEl).click(function () {
-        if (inputVal !== "") {
-            $('.alerts').text('Please enter info first');
-        }
-        else {
-            $.jStorage.set(inputVal);
-            $.jStorage.get(inputVal);
-        }
-
-    })
-});
-
-
-$(document).ready(function () {
     var $scope = {};
     $scope.date = new Date();
     $scope.moment = moment($scope.date);
     var hr = "h";
 
-
     // DateTime Format
     $('#currentDay').html($scope.moment.format('MMMM Do h:mm:ss a'));
-
-    if (hr === 9){
+    
+    
+    
+    if (hr === 9) {
         $(row1El).css("background-color", "green");
     }
     else if (hr > 9) {
         $(row1El).css("background-color", "blue");
     }
     else {
-        $(row1El).css("background-color", "red",);
+        $(row1El).css("background-color", "red");
     };
-    if (hr === 10){
+    if (hr === 10) {
         $(row2El).css("background-color", "green");
     }
     else if (hr > 10) {
         $(row2El).css("background-color", "blue");
     }
     else {
-        $(row2El).css("background-color", "red",);
+        $(row2El).css("background-color", "red");
     };
-    if (hr === 11){
+    if (hr === 11) {
         $(row3El).css("background-color", "green");
     }
     else if (hr > 11) {
         $(row3El).css("background-color", "blue");
     }
     else {
-        $(row3El).css("background-color", "red",);
+        $(row3El).css("background-color", "red");
     };
-    if (hr === 12){
+    if (hr === 12) {
         $(row4El).css("background-color", "green");
     }
     else if (hr > 12) {
         $(row4El).css("background-color", "blue");
     }
     else {
-        $(row4El).css("background-color", "red",);
+        $(row4El).css("background-color", "red");
     };
     if (hr === 1) {
         $(row5El).css("backgruond-color", "green");
@@ -129,10 +115,25 @@ $(document).ready(function () {
     else {
         $(row9El).css("background-color", "red");
     };
-
-
-
-
-
-})
-
+    
+    
+    localStorage.getItem("row1");
+    console.log(localStorage.getItem("row1"));
+    $("#save-info").val(localStorage.getItem("row1"));
+    
+    $(saveBtnsEl).click(function () {
+        var inputVal = $("#save-info").val();
+        var id = 'row1';
+        var value = inputVal;
+        var inputEl = true;
+        console.log(id);
+        console.log(value);
+        if (value == "") {
+            $('.alerts').text('Please enter info first');
+        }
+        else {
+            localStorage.setItem(id, value);
+            
+        };
+    });
+});
