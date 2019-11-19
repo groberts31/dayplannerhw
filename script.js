@@ -1,3 +1,4 @@
+// JQuery with variables and functions listed below
 
 var saveBtnsEl = $(".saveBtns");
 var row1El = $("#row1");
@@ -10,6 +11,7 @@ var row7El = $("#row7");
 var row8El = $("#row8");
 var row9El = $("#row9");
 
+// Function to display time with save button and localStorage
 
 $(document).ready(function () {
     var $scope = {};
@@ -22,7 +24,7 @@ $(document).ready(function () {
     // DateTime Format
     $('#currentDay').html($scope.moment.format('MMMM Do h:mm:ss a'));
 
-
+    // Function to show different colors depending on the time
 
     if (hr === 9) {
         $(row1El).css("background-color", "green");
@@ -118,14 +120,15 @@ $(document).ready(function () {
         $(row9El).css("background-color", "red");
     };
 
-
+    // Function to retrieve from localStorage
 
     $(".input-group input[type=text]").each(function() {
         var name = $(this).attr("name")
         $(this).val(localStorage.getItem(name))
     });
 
-    //SAVE
+    //Save function for button and storing in local storage with the time
+
     $(saveBtnsEl).click(function () {
         var id = $(this).attr("name");
         var inputVal = $("Input[name=" + id + "]").val();
