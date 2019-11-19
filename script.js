@@ -11,6 +11,10 @@ var row7El = $("#row7");
 var row8El = $("#row8");
 var row9El = $("#row9");
 
+function clear_all() {
+    $("Input[name=" + id + "]").val();
+}
+
 // Function to display time with save button and localStorage
 
 $(document).ready(function () {
@@ -122,7 +126,7 @@ $(document).ready(function () {
 
     // Function to retrieve from localStorage
 
-    $(".input-group input[type=text]").each(function() {
+    $(".input-group input[type=text]").each(function () {
         var name = $(this).attr("name")
         $(this).val(localStorage.getItem(name))
     });
@@ -142,6 +146,7 @@ $(document).ready(function () {
         else {
             localStorage.setItem(id, inputVal + " -------- " + CurrentDate);
             $("Input[name=" + id + "]").val(inputVal + " -------- " + CurrentDate)
+            clear_all();
         };
     });
 

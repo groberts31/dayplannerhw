@@ -3,6 +3,7 @@
 #jumbo1 {
     background-color: white;
     text-align: center;
+    height: wrap;
 }
 #jumbo {
     background-color: rgb(224, 224, 224);
