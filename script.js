@@ -1,5 +1,5 @@
 
-var saveBtnsEl = document.getElementsByClassName("saveBtns");
+var saveBtnsEl = $(".saveBtns");
 var row1El = $("#row1");
 var row2El = $("#row2");
 var row3El = $("#row3");
@@ -16,12 +16,14 @@ $(document).ready(function () {
     $scope.date = new Date();
     $scope.moment = moment($scope.date);
     var hr = "h";
+    var time = "h:mm:ss";
+
 
     // DateTime Format
     $('#currentDay').html($scope.moment.format('MMMM Do h:mm:ss a'));
-    
-    
-    
+
+
+
     if (hr === 9) {
         $(row1El).css("background-color", "green");
     }
@@ -115,25 +117,31 @@ $(document).ready(function () {
     else {
         $(row9El).css("background-color", "red");
     };
-    
-    
-    localStorage.getItem("row1");
-    console.log(localStorage.getItem("row1"));
-    $("#save-info").val(localStorage.getItem("row1"));
-    
+
+
+
+    $(".input-group input[type=text]").each(function() {
+        var name = $(this).attr("name")
+        $(this).val(localStorage.getItem(name))
+    });
+
+    //SAVE
     $(saveBtnsEl).click(function () {
-        var inputVal = $("#save-info").val();
-        var id = 'row1';
-        var value = inputVal;
-        var inputEl = true;
+        var id = $(this).attr("name");
+        var inputVal = $("Input[name=" + id + "]").val();
+        var CurrentDate = moment().format('h:mm:ss a');
+
         console.log(id);
-        console.log(value);
-        if (value == "") {
+        console.log(inputVal);
+        if (inputVal == "") {
             $('.alerts').text('Please enter info first');
         }
         else {
-            localStorage.setItem(id, value);
-            
+            localStorage.setItem(id, inputVal + " -------- " + CurrentDate);
+            $("Input[name=" + id + "]").val(inputVal + " -------- " + CurrentDate)
         };
     });
+
+
+
 });
